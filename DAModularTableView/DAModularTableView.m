@@ -326,6 +326,16 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    DAModularTableRow *tableRow = [self rowAtIndexPath:indexPath];
+    
+    if (tableRow.willDisplayCellForRowBlock)
+    {
+        tableRow.willDisplayCellForRowBlock(cell, tableRow, indexPath);
+    }
+
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
 	DAModularTableSection *tableSection = [self sectionAtIndex:section];

@@ -24,6 +24,8 @@
 
 @property (nonatomic, copy) void(^didSelectBlock)(NSIndexPath *indexPath);
 @property (nonatomic, copy) void(^cellForRowBlock)(UITableViewCell *cell, NSIndexPath *indexPath);
+@property (nonatomic, copy) void(^willDisplayCellForRowBlock)(UITableViewCell *cell, DAModularTableRow *tableRow, NSIndexPath *indexPath);
+
 @property (nonatomic) SEL didSelectAction;
 
 + (DAModularTableRow *)row;
